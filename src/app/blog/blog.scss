@@ -16,7 +16,7 @@
     }
     &-content {
         width: 100%;
-        @include flexible(flex,column,wrap,center,start);
+        @include flexible(flex,column,wrap,center,flex-start);
         gap: 10px;
         &-contenedor{
             padding: 2rem 0 2rem 0;
