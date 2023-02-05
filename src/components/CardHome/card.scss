@@ -1,0 +1,69 @@
+@import '../../styles/utils.scss';
+
+.card {
+    border-radius: 10px;
+    height: 300px;
+    border: solid 2px rgba(255, 255, 255, 0.971);
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: all 0.4s ease-in;
+    @include media-up(md){
+        height: 200px;
+    }
+    @include media-up(sm){
+        height: 200px;
+    }
+    &-title {
+        transition: all 0.4s ease-in;
+    }
+    &:hover &-title{
+        transform:  translateY(-78px);
+        @include media-up(sm){
+            transform:  translateY(-38px);
+        }
+    }
+    &:hover &-icon{
+        transform:  translateY(-78px);
+        @include media-up(sm){
+            transform:  translateY(-38px);
+        }
+    }
+}
+.card-container {
+    flex-basis: 400px;
+    @include flexible(flex,column,wrap,center,center);
+    gap: 15px;
+    @include media-up(md){
+        flex-basis: 600px;
+    }
+}
+
+.icon-arrow{
+    font-size: 2.7rem;
+    transition: all 0.4s ease-in ;    
+    animation: pulso 1s infinite linear alternate ;
+}
+
+.card-uno:hover {
+    background-image: url(./fondo1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:#174399;   
+} 
+
+.card-dos:hover {
+    background-image: url(./fondo2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:#174399;
+} 
+
+.card-tres:hover {
+    background-image: url(./fondo3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:#174399;
+} 

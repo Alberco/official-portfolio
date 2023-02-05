@@ -1,0 +1,77 @@
+@import '../../styles/utils.scss';
+
+.blogs {
+    margin: 2rem;
+    &-title {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        @include media-up(md){
+            font-size: 3rem;
+        }
+        @include media-up(sm){
+            font-size: 2rem;
+            margin: 0.5rem;
+        }
+    }
+    &-content {
+        width: 100%;
+        @include flexible(flex,column,wrap,center,start);
+        gap: 10px;
+        &-contenedor{
+            padding: 2rem 0 2rem 0;
+            border-top: solid 2px rgba(255, 255, 255, 0.672);
+            border-bottom: solid 2px rgba(255, 255, 255, 0.672);
+            width: 100%;
+            position: relative;
+            transition-duration: 0.5s;
+            &:hover{
+                transform: scale(1.02);
+            }
+            cursor: pointer;
+            @include media-up(md){
+                padding: 2rem 0 2rem 0;
+            }
+            @include media-up(sm){
+                padding: 1rem 0 1rem 0;
+    
+            }
+        }
+        &-title {
+            font-size: 2rem;
+            @include media-up(md){
+                font-size: 2rem;
+            }
+            @include media-up(sm){
+                font-size: 1rem;
+            }
+        }
+        &-icon {
+            font-size: 2rem;
+            position: absolute;
+            font-weight: bold;
+            width: 80px;
+            right: 2rem;
+            top: 2rem ;
+            @include media-up(md){
+                font-size: 2rem;
+                right: -50px;
+                top: 2rem ;
+            }
+            @include media-up(sm){
+                font-size: 1rem;
+                right: -39px;
+                top: 1.4rem ;
+            }
+        }
+    }
+}
+
+@keyframes arrowAnimation {
+    0% {
+        transform: translateY(1)
+    }
+    100% {
+        transform: translateY(1.4);
+    }
+}

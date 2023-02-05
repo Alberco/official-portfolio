@@ -1,0 +1,79 @@
+@import '../../../styles/utils.scss';
+
+
+.blogspage {
+    margin: 2rem;
+    width: 80%;
+    @include media-up(md){
+        margin: 2rem;
+        width: 100%;
+    }
+    @include media-up(sm){
+        margin: 0.5rem;
+        width: 100%;
+    }
+    &-title {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        @include media-up(md){
+            font-size: 3rem;
+        }
+        @include media-up(sm){
+            font-size: 1.4rem;
+        }
+    }
+    &-content {
+        font-size: 2rem;
+        font-weight: medium;
+        margin-bottom: 20px;
+        width: 100%;
+        @include media-up(md){
+            font-size: 2rem;
+        }
+        @include media-up(sm){
+            font-size: 1rem;
+        }
+    }
+    
+
+}
+
+.listas {
+    
+    &-links {
+        position: relative;
+        font-size: 1.3rem;
+        margin: 1rem;
+        padding-left: 50px ;
+        width: 40%;
+        @include media-up(md){
+            font-size: 1rem;
+        }
+        @include media-up(sm){
+            margin: .8rem;
+            font-size: 0.8rem;
+            padding-left: 20px ;
+        }
+    }
+    &-icon {
+        position: absolute;
+        left: -20px;
+        top: 2px;
+        width: 50px;
+    }
+    &-hrf {
+        @include media-up(md){
+
+        }
+        @include media-up(sm){
+            width: 80%;
+        }
+        &:hover {
+            color: rgb(139, 139, 184);
+        }
+        &:hover ~ span {
+            color: rgb(139, 139, 184);
+        }
+    }
+}

@@ -1,0 +1,243 @@
+@import '../../styles/utils.scss';
+
+.proyectos {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    &-bloque {
+        @include flexible(flex,row,wrap,flex-start,center);
+        width: 100%;
+        margin-top: 1rem;
+        font-size: 1.4rem;
+        gap: 15px;
+        @include media-up(md){
+            @include flexible(flex,row,wrap,center,center);
+            font-size: 1.2rem;
+        }
+        @include media-up(sm){
+            @include flexible(flex,row,wrap,center,center);
+        }
+        &-card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background-color: rgba(16, 10, 69, 0.392);
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            transition: .3s linear;
+            cursor: pointer;
+            @include media-up(md){
+                width: 260px;
+                height: 400px;
+            }
+            
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+            }
+            p {
+                position: absolute;
+                width: 100%;
+                top: 2rem;
+                left: 1rem;
+            }
+            ul {
+                @include flexible(flex,row,wrap,flex-start,center);
+                gap: 3px;
+                width: 100%;
+                position: absolute;
+                font-size: .8rem;
+                top: 4.5rem;
+                left: 1rem;
+            }
+            ul > li {
+                padding: 0.5rem 0.6rem;
+                background-color: rgb(255, 253, 253);
+                border-radius: 15px;
+                color: black;
+                font-weight: bold;
+            }
+        }
+        &-modal {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 10000;
+            backdrop-filter: blur(5px);
+            @include flexible(flex,row,wrap,center,center);
+            &-contenido{
+                background-color: rgba(0, 0, 0, 0.652);
+                width: 900px;
+                height: auto;
+                position: relative;
+                padding: 2rem 3rem;
+                border-radius: 20px;
+                @include media-up(md){
+                    
+                }
+                @include media-up(sm){
+                    border-radius: 0px;
+                }
+            }
+            &-imagen {
+                object-fit: contain;
+                border-radius: 20px;
+                padding-top: 10px;
+            }
+            &-title {
+                position: absolute;
+                text-align: center;
+                font-size: 1.4rem;
+                color: white;
+                font-weight: bold;
+            }
+            &-icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+                color: rgba(255, 255, 255, 0.775);
+                font-size: 5rem;
+            }
+            &-buttons {
+                @include flexible(flex,row,wrap,center,center);
+                gap: 20px;
+                & a{
+                    border: solid 2px white;
+                    padding: 10px 30px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition:  .4s linear;
+                }
+                & a:hover {
+                    background-color: rgba(25, 30, 133, 0.878);
+                }
+            }
+        }
+        &-icon {
+            position: absolute;
+            font-size: 3rem;
+            bottom: 20px;
+            right: 20px;
+            width: auto;
+        }
+        &-imagen {
+            opacity: 0.1;
+            transition: .3s linear;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+    &-content {
+        width: 100%;
+        height: 310px;
+        position: relative;
+        border: solid 3px rgba(255, 255, 255, 0.606);
+        border-radius: 10px;
+    }
+    &-img {
+        border-radius: 10px;
+        object-fit: cover;
+        filter: blur(3px);
+        z-index: 1;
+    }
+    &-title{
+        position: absolute;
+        font-size: 3rem;
+        font-weight: bold;
+        left: 100px;
+        top: 100px;
+        z-index: 10;
+        @include media-up(xl){
+            font-size: 2.4rem;
+            width: 80%;
+        }
+        @include media-up(lg){
+            font-size: 1.8rem;
+            width: 80%;
+        }
+        @include media-up(md){
+            font-size: 1.8rem;
+            left: 40px;
+            width: 80%;
+        }
+        @include media-up(sm){
+            left: 20px;
+            bottom: 20px;
+            font-size: 1.2rem;
+        }
+    }
+    &-buttom{
+        position: absolute;
+        font-size: 1rem;
+        font-weight: bold;
+        left: 100px;
+        top: 170px;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        background: white;
+        color: black;
+        cursor: pointer;
+        transition: .4s linear;
+        @include media-up(xl){
+            top: 65%;
+        }
+        @include media-up(lg){
+            top: 60%;
+        }
+        @include media-up(md){
+            font-size: .8rem;
+            top: 60%;
+            left: 40px;
+            padding: .6rem .4rem;
+        }
+        @include media-up(sm){
+            font-size: .8rem;
+            top: 50%;
+            left: 20px;
+            padding: .6rem .4rem;
+        }
+/*         @include media-up(sm){
+            left: 20px;
+            top: 50px;
+            font-size: 1.2rem;
+        } */
+        &:hover {
+            transform: translateX(20px);
+            background: rgba(255, 255, 255, 0.826);
+        }
+        z-index: 10;
+    }
+    &-content2 {
+        width: 100%;
+        margin-top: 10px;
+        &-titulo {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0px;
+        }
+    }
+    &-content3{
+        @include flexible(flex,row,wrap,center,center);
+        margin-top: 1rem;
+        margin-bottom: 1.4rem;
+        border: solid 2px black;
+        gap: 10px;
+        max-width: 300px;
+        &-card {
+            max-width: 30%;
+            @include flexible(flex,row,wrap,flex-start,flex-start);
+            background-color: rgba(52, 48, 43, 0.684);
+            height: 200px;
+            border-radius: 10px;
+            border: solid 2px black;
+            text-align: center;
+        }
+        &-aea {
+            font-size: 1.4rem;
+            max-width: 400px ;
+        }
+    }
+}
+

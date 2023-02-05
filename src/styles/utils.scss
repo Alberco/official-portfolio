@@ -1,0 +1,62 @@
+@mixin flexible( $dis , $direction , $corte , $just , $align ){
+    display         : $dis;
+    flex-flow       : $direction $corte;
+    justify-content : $just;
+    align-items     : $align;
+}
+
+@mixin grid( $columnas , $espacio){
+    display                 : grid;
+    grid-template-columns   : repeat( $columnas , 1fr );
+    gap                     : $espacio;
+
+    @media screen and (max-width:480px) {
+        grid-template-columns : 1fr ;
+        gap : 0em;
+    }
+}
+/* @include grid( 4 , 1em ); */
+
+$breakpoints : (
+    xs: 412px,
+    sm: 540px,
+    md: 840px,
+    lg: 1024px,
+    xl: 1424px
+);
+
+
+@mixin media-up($breakpoint){
+    @media screen and (max-width: map-get($breakpoints,$breakpoint)){
+        @content;
+    }
+}
+
+@mixin media-up2($breakpoint2){
+    @media screen and (min-width: map-get($breakpoints,$breakpoint2)){
+        @content;
+    }
+}
+
+
+@mixin mv( $medida : 480px ){
+    @media screen and (max-width: $medida ) {
+        @content;
+    }
+}
+
+@mixin movil(){
+    @media screen and (max-width: 480px) {
+        @content;    
+    }
+}
+/* 
+&:hover{ color:red; }
+&:active{ color:aqua; }
+&:visited{ color:pink; } */
+
+/* article{
+    width:25%;
+    @include mv(768px){ width:50% }
+    @include mv(){ width:100% }
+} */
